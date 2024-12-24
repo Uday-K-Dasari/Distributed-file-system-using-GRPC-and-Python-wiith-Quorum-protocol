@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+service SuperNode {
+    rpc GiveRandomNode(Empty) returns (Node);
+    rpc GetFileSystemState(Empty) returns (FileSystemState);
+}
+
+service DataNode {
+    rpc RequestRead(ReadRequest) returns (ReadResponse);
+    rpc RequestWrite(WriteRequest) returns (WriteResponse);
+    rpc GetFilesOnNode(Empty) returns (NodeFiles);
+}
+
+message Node {
+    string ip = 1;
+    int32 port = 2;
+    int32 id = 3;
+}
+
+message FileSystemState {
+    map<int32, NodeFiles> node_files = 1;
+}
+
+message ReadRequest {
+    string file_name = 1;
+    int32 node_id = 2;
+}
+
+message ReadResponse {
+    int32 status = 1;
+    string contents = 2;
+}
+
+message WriteRequest {
+    string file_name = 1;
+    string content = 2;
+    int32 node_id = 3;
+}
+
+message WriteResponse {
+    int32 status = 1;
+    string contents = 2;
+}
+
+message NodeFiles {
+    repeated string files = 1;
+}
+
+message Empty {}
