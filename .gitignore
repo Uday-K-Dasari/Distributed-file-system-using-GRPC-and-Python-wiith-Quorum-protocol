@@ -20,6 +20,6 @@ bin-release/
 
 
 #below files are ignored while uploading the code to git
-_pycache_
-distributed_system_pb2.py
-distributed_system_pb2_grpc.py
+DS_GRPC/_pycache_
+DS_GRPC/distributed_system_pb2.py
+DS_GRPC/distributed_system_pb2_grpc.py
