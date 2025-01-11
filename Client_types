@@ -1,0 +1,11 @@
+Read-Heavy Clients:
+These clients predominantly perform read operations with minimal writes. They are ideal for applications like analytics or content delivery systems where data needs to be frequently accessed but rarely updated.
+
+Write-Heavy Clients:
+These clients focus on writing data to the system, with fewer read operations. They are common in scenarios like real-time data collection, such as logging systems or sensor networks that continuously generate new data.
+
+Balanced Clients:
+Balanced clients handle an equal mix of read and write operations. They are best suited for general-purpose applications where efficient data management for both types of operations is critical.
+
+State-Query Clients:
+These clients interact with the SuperNode to query the system's state, retrieving metadata about file distribution and health. They are crucial for monitoring, administration, and ensuring the system’s organization and reliability.
