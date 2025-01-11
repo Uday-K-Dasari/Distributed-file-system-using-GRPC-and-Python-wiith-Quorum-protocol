@@ -1,0 +1,13 @@
+created a distributed file system using Python and GRPC and implemented quorum proptocol.
+
+Steps to run:
+------------commands to activate the super_node and data_node---------------
+1. python super_node.py # to run th esuper node in port 5000
+2. python data_node.py 1 5001  # to run the first data node in port 5001
+3. python data_node.py 2 5002  # to run the second data node in port 5002
+4. python data_node.py 3 5003  # to run the third data node in port 5003
+-------------commands to run the client node for different workloads-----
+6. python client.py 0 10   # heavy read client
+7. python client.py 1 10   # heavy write client
+8. python client.py 2 10   # balanced client
+9. python client.py 3 0    # to know the node status
